@@ -18,9 +18,9 @@
         "name": "next"
       }
     ],
-    "types":["vitest/globals"],
+    "types": ["vitest/globals"],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [

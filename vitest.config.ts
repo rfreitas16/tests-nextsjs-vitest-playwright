@@ -93,7 +93,7 @@ export default defineConfig({
     alias: {
       // Permite usar @/ como atalho para a pasta src
       // Exemplo: import Button from '@/components/Button'
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 });

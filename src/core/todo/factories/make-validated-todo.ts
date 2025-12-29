@@ -1,4 +1,4 @@
-import { sanitizeStr } from '@/src/utils/sanitize-str';
+import { sanitizeStr } from '@/utils/sanitize-str';
 import { validateTodoDescription } from '../schemas/validate-todo-description';
 import { makeNewTodo } from './make-new-todo';
 import { Todo } from '../schemas/todo.contract';
