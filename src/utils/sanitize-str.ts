@@ -5,5 +5,5 @@ export function sanitizeStr(s: string): string {
   return clean;
 }
 
-const env = getFullEnv();
-console.log(env)
+// const env = getFullEnv();
+// console.log(env)
