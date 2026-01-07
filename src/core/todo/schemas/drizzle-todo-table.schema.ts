@@ -1,3 +1,4 @@
+import { InferInsertModel, InferSelectModel } from 'drizzle-orm';
 import { sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const todoTable = sqliteTable('todo', {
@@ -6,3 +7,5 @@ export const todoTable = sqliteTable('todo', {
   createdAt: text('created_at').notNull(),
 });
 
+export type TodoTableSelectModel = InferSelectModel<typeof todoTable>;
+export type TodoTableInsertModel = InferInsertModel<typeof todoTable>;
