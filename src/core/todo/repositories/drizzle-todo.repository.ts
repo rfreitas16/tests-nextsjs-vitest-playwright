@@ -47,7 +47,7 @@ export class DrizzleTodoRepository implements TodoRepository {
     if (!existingTodo) {
       return {
         success: false,
-        errors: ['Todo nao existe'],
+        errors: ['Todo não existe'],
       };
     }
 
