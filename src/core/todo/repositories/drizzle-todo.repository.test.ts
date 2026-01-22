@@ -44,88 +44,87 @@ describe('DrizzleTodoRepository (integration)', () => {
       });
     });
 
-    // #TODO erros aqui
+    // #TODO erros aqui #RESOLVIDO - cuidar com acentuacao
 
-    // test('falha se houver uma descrição igual na tabela', async () => {
-    //   const { repository, todos } = await makeTestTodoRepository();
+    test('falha se houver uma descrição igual na tabela', async () => {
+      const { repository, todos } = await makeTestTodoRepository();
 
-    //   // Cria um novo todo
-    //   await repository.create(todos[0]);
+      // Cria um novo todo
+      await repository.create(todos[0]);
 
-    //   // Tenta criar um outro todo com a mesma descrição
-    //   const anotherTodo = {
-    //     id: 'any id',
-    //     description: todos[0].description,
-    //     createdAt: 'any date',
-    //   };
-    //   const result = await repository.create(anotherTodo);
+      // Tenta criar um outro todo com a mesma descrição
+      const anotherTodo = {
+        id: 'any id',
+        description: todos[0].description,
+        createdAt: 'any date',
+      };
+      const result = await repository.create(anotherTodo);
 
-    //   expect(result).toStrictEqual({
-    //     success: false,
-    //     errors: ['Já existe um todo com o ID ou descrição enviados'],
-    //   });
-    // });
+      expect(result).toStrictEqual({
+        success: false,
+        errors: ['Ja existe um todo com o ID ou descricao enviados'],
+      });
+    });
 
-    //   test('falha se houver um ID igual na tabela', async () => {
-    //     const { repository, todos } = await makeTestTodoRepository();
+    test('falha se houver um ID igual na tabela', async () => {
+      const { repository, todos } = await makeTestTodoRepository();
 
-    //     // Cria um novo todo
-    //     await repository.create(todos[0]);
+      // Cria um novo todo
+      await repository.create(todos[0]);
 
-    //     // Tenta criar um outro todo com o mesmo ID
-    //     const anotherTodo = {
-    //       id: todos[0].id,
-    //       description: 'any description',
-    //       createdAt: 'any date',
-    //     };
-    //     const result = await repository.create(anotherTodo);
+      // Tenta criar um outro todo com o mesmo ID
+      const anotherTodo = {
+        id: todos[0].id,
+        description: 'any description',
+        createdAt: 'any date',
+      };
+      const result = await repository.create(anotherTodo);
 
-    //     expect(result).toStrictEqual({
-    //       success: false,
-    //       errors: ['Já existe um todo com o ID ou descrição enviados'],
-    //     });
-    //   });
+      expect(result).toStrictEqual({
+        success: false,
+        errors: ['Ja existe um todo com o ID ou descricao enviados'],
+      });
+    });
 
-    //   test('falha se houver um ID e Descrição iguais', async () => {
-    //     const { repository, todos } = await makeTestTodoRepository();
+    test('falha se houver um ID e Descrição iguais', async () => {
+      const { repository, todos } = await makeTestTodoRepository();
 
-    //     await repository.create(todos[0]);
+      await repository.create(todos[0]);
 
-    //     const anotherTodo = {
-    //       id: todos[0].id,
-    //       description: todos[0].description,
-    //       createdAt: 'any date',
-    //     };
-    //     const result = await repository.create(anotherTodo);
+      const anotherTodo = {
+        id: todos[0].id,
+        description: todos[0].description,
+        createdAt: 'any date',
+      };
+      const result = await repository.create(anotherTodo);
 
-    //     expect(result).toStrictEqual({
-    //       success: false,
-    //       errors: ['Já existe um todo com o ID ou descrição enviados'],
-    //     });
-    //   });
-    // });
+      expect(result).toStrictEqual({
+        success: false,
+        errors: ['Ja existe um todo com o ID ou descricao enviados'],
+      });
+    });
 
-    // describe('remove', () => {
-    //   test('apaga um todo se ele existir', async () => {
-    //     const { repository, todos } = await makeTestTodoRepository();
-    //     await insertTestTodos();
-    //     const result = await repository.remove(todos[0].id);
+    describe('remove', () => {
+      test('apaga um todo se ele existir', async () => {
+        const { repository, todos } = await makeTestTodoRepository();
+        await insertTestTodos();
+        const result = await repository.remove(todos[0].id);
 
-    //     expect(result).toStrictEqual({
-    //       success: true,
-    //       todo: todos[0],
-    //     });
-    //   });
+        expect(result).toStrictEqual({
+          success: true,
+          todo: todos[0],
+        });
+      });
 
-    //   test('falha ao apagar se o todo não existir', async () => {
-    //     const { repository } = await makeTestTodoRepository();
-    //     const result = await repository.remove('any id');
+      test('falha ao apagar se o todo não existir', async () => {
+        const { repository } = await makeTestTodoRepository();
+        const result = await repository.remove('any id');
 
-    //     expect(result).toStrictEqual({
-    //       success: false,
-    //       errors: ['Todo não existe'],
-    //     });
-    //   });
-    // });
+        expect(result).toStrictEqual({
+          success: false,
+          errors: ['Todo não existe'],
+        });
+      });
+    });
   });
 });
