@@ -1,4 +1,4 @@
-import { createTodoUseCase } from '../usecases/create-todo-usercase';
+import { createTodoUseCase } from '../usecases/create-todo-usecase';
 import { revalidatePath } from 'next/cache';
 
 export async function createTodoAction(description: string) {

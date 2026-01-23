@@ -1,5 +1,5 @@
 import { makeTestTodoRepository } from '@/core/__tests__/utils/make-test-todo-repository';
-import { createTodoUseCase } from './create-todo-usercase';
+import { createTodoUseCase } from './create-todo-usecase';
 import { InvalidTodo, ValidTodo } from '../schemas/todo.contract';
 
 describe('createTodoUseCase (integration)', () => {
