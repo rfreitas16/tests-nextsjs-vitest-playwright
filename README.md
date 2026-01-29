@@ -11,6 +11,32 @@ npm i drizzle-orm better-sqlite3 clsx date-fns lucide-react
 npm i -D dotenv dotenv-cli drizzle-kit @types/better-sqlite3 tsx
 ```
 
+## para rodar o teste
+
+```
+npm run test:watch
+```
+
+```
+npm run test:int:watch
+
+```
+
+### instalacao do storiebook para testar components
+
+```
+npm install -D @storybook/react@8.x @storybook/nextjs@8.x @storybook/addon-essentials@8.x storybook@8.x --force
+```
+
+## rodar o storiebook
+
+adiconar no package.json
+
+```
+  "storybook": "storybook dev -p 6006",
+  "build-storybook": "storybook build"
+```
+
 ## Getting Started
 
 First, run the development server:

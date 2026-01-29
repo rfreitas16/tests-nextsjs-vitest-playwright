@@ -23,7 +23,9 @@
     "test:e2e:headed": "dotenv -e .env.e2e -- playwright test --headed",
     "test:e2e:debug": "dotenv -e .env.e2e -- playwright test --debug",
     "test:e2e:ui": "dotenv -e .env.e2e -- playwright test --ui",
-    "test:e2e:report": "dotenv -e .env.e2e -- playwright show-report"
+    "test:e2e:report": "dotenv -e .env.e2e -- playwright show-report",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "better-sqlite3": "^12.5.0",
@@ -36,6 +38,9 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/nextjs": "^8.6.15",
+    "@storybook/react": "^8.6.15",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
@@ -45,6 +50,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^5.1.2",
+    "@vitest/browser-playwright": "^4.0.16",
     "@vitest/coverage-v8": "^4.0.16",
     "dotenv": "^17.2.3",
     "dotenv-cli": "^11.0.0",
@@ -52,12 +58,12 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "jsdom": "^27.3.0",
+    "playwright": "^1.58.0",
+    "storybook": "^8.6.15",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5",
-    "vitest": "^4.0.16",
     "vite": "^7.3.1",
-    "playwright": "^1.58.0",
-    "@vitest/browser-playwright": "^4.0.16"
+    "vitest": "^4.0.16"
   }
 }
