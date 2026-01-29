@@ -43,3 +43,6 @@ next-env.d.ts
 
 #Database used for tests
 *.sqlite3
+
+*storybook.log
+storybook-static
